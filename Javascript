@@ -1,0 +1,11 @@
+function signInWithGoogle() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+    .then(result => {
+      const user = result.user;
+      alert("مرحبًا " + user.displayName);
+    })
+    .catch(error => {
+      alert("فشل تسجيل الدخول: " + error.message);
+    });
+}
